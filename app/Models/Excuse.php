@@ -5,25 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Excusa extends Model
+class Excuse extends Model
 {
     protected $table = 'excusas';
 
     protected $fillable = [
-        'id',
-        'estado',
-        'fecha_inicio',
-        'fecha_fin',
-        'descripcion',
-        'evidencia',
-        'tipo',
-        'usuario_id',
+            'id',
+            'estado',
+            'fecha_inicio',
+            'fecha_fin' ,
+            'descripcion',
+            'evidencia',
+            'tipo',
+            'usuario_id'
     ];
 
-    // Relación con el modelo Usuario
-
-    public function excusas(){
+    public function excuse(){
         return $this->belongsTo(Usuario::class, 'id','id_usuario');
-
-    }
+    
+}
 }
